@@ -1,6 +1,6 @@
 # mvgl-sorting
 
-Plugin for sorting games list by personal rating on [myvideogamelist.com](https://myvideogamelist.com/)
+Some code for sorting games list by personal rating on [myvideogamelist.com](https://myvideogamelist.com/)
 
 You will need to install those two plugins for Google Chrome:
 
