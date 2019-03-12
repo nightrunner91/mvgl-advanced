@@ -2,17 +2,19 @@ var targetBody = getTableElements("tbody");
 var targetRows = getTableElements("tr");
 
 function searchTargetHeading(selector, text) {
-  var elements = document.querySelectorAll(selector);
-  return Array.prototype.filter.call(elements, function(element) {
-    return RegExp(text).test(element.textContent);
-  });
+  var elements = [].slice.call(document.querySelectorAll(selector));
+  return elements.filter(x => RegExp(text).test(x.textContent));
 }
 
 function getNextSibling(elem, selector) {
   var sibling = elem.nextElementSibling;
-  if (!selector) return sibling;
+  if (!selector) {
+    return sibling;
+  }
   while (sibling) {
-    if (sibling.matches(selector)) return sibling;
+    if (sibling.matches(selector)) {
+      return sibling;
+    }
     sibling = sibling.nextElementSibling;
   }
 }
@@ -54,23 +56,37 @@ function sortRows() {
   var tbodyClassname = targetBody.className;
 
   switch (tbodyClassname) {
-    case "tbody--normal":
-      targetBody.classList.remove("tbody--normal");
-      targetBody.classList.add("tbody--reverse");
-      document.querySelector("th .caret").classList.add("caret--flipped");
+    case "tbody--normal": {
+      sortAscending();
       break;
-    case "tbody--reverse":
-      targetBody.classList.remove("tbody--reverse");
-      targetBody.classList.add("tbody--normal");
-      document.querySelector("th .caret").classList.remove("caret--flipped");
+    }
+    case "tbody--reverse": {
+      sortDescending();
       break;
-    default:
-      targetBody.classList.add("tbody--normal");
+    }
+    default: {
+      sortDefault();
+    }
   }
+}
 
+function sortDefault() {
+  targetBody.classList.add("tbody--normal");
   for (let index = 0; index < targetRows.length; index++) {
     targetRows[index].children[2].classList.add("sortable");
   }
+}
+
+function sortAscending() {
+  targetBody.classList.remove("tbody--normal");
+  targetBody.classList.add("tbody--reverse");
+  document.querySelector("th .caret").classList.add("caret--flipped");
+}
+
+function sortDescending() {
+  targetBody.classList.remove("tbody--reverse");
+  targetBody.classList.add("tbody--normal");
+  document.querySelector("th .caret").classList.remove("caret--flipped");
 }
 
 prepareRows();
