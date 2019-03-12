@@ -53,33 +53,43 @@ tr td:nth-child(6) {
   width: 10%;
 }
 
-tr.rated--1 {
+tbody.tbody--normal tr.rated--1,
+tbody.tbody--reverse tr.rated--1 {
   order: 10;
 }
-tr.rated--2 {
+tbody.tbody--normal tr.rated--2,
+tbody.tbody--reverse tr.rated--2 {
   order: 9;
 }
-tr.rated--3 {
+tbody.tbody--normal tr.rated--3,
+tbody.tbody--reverse tr.rated--3 {
   order: 8;
 }
-tr.rated--4 {
+tbody.tbody--normal tr.rated--4,
+tbody.tbody--reverse tr.rated--4 {
   order: 7;
 }
-tr.rated--5 {
+tbody.tbody--normal tr.rated--5,
+tbody.tbody--reverse tr.rated--5 {
   order: 6;
 }
-tr.rated--6 {
+tbody.tbody--normal tr.rated--6,
+tbody.tbody--reverse tr.rated--6 {
   order: 5;
 }
-tr.rated--7 {
+tbody.tbody--normal tr.rated--7,
+tbody.tbody--reverse tr.rated--7 {
   order: 4;
 }
-tr.rated--8 {
+tbody.tbody--normal tr.rated--8,
+tbody.tbody--reverse tr.rated--8 {
   order: 3;
 }
-tr.rated--9 {
+tbody.tbody--normal tr.rated--9,
+tbody.tbody--reverse tr.rated--9 {
   order: 2;
 }
-tr.rated--10 {
+tbody.tbody--normal tr.rated--10,
+tbody.tbody--reverse tr.rated--10 {
   order: 1;
 }
