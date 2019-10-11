@@ -29,7 +29,7 @@ th .caret.caret--flipped {
 }
 
 td.sortable {
-  background: #f8f8f8;
+  background: transparent;
 }
 
 tr {
