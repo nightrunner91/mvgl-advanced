@@ -86,16 +86,26 @@ function placeCarrets() {
 }
 
 function placePlus() {
+  var targetCurr = searchTargetHeading("h4", "Currently Playing")[0];
   var targetCont = searchTargetHeading("h4", "Continuously Playing")[0];
   var targetCompl = searchTargetHeading("h4", "Completed")[0];
   var targetDrop = searchTargetHeading("h4", "Dropped")[0];
   var targetPlan = searchTargetHeading("h4", "Plan to Play")[0];
 
-  var targets = [targetCont, targetCompl, targetDrop, targetPlan];
+  var targets = [targetCurr, targetCont, targetCompl, targetDrop, targetPlan];
 
   for (let index = 0; index < targets.length; index++) {
     targets[index].classList.add('spoiler');
     targets[index].innerHTML += '<i class="caret"></i>'
+  }
+}
+
+function replaceIcons() {
+  var targetIcons = document.querySelectorAll('.fa-file-text-o');
+
+  for (let index = 0; index < targetIcons.length; index++) {
+    targetIcons[index].classList.remove('fa-file-text-o');
+    targetIcons[index].classList.add('fa-sticky-note');
   }
 }
 
@@ -172,6 +182,7 @@ function spoilerTable(event) {
 prepareRows();
 placeCarrets();
 placePlus();
+replaceIcons();
 
 document.querySelector("th .rating").addEventListener("click", function () {
   sortRows('rating')
