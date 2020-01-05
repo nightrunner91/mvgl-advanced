@@ -29,7 +29,7 @@ th .caret.caret--flipped {
 }
 
 td.sortable {
-  background: transparent;
+  background: rgba(0, 0, 0, 0.1) !important;
 }
 
 tr {
@@ -39,18 +39,23 @@ tr {
 tr td:nth-child(1) {
   width: 5%;
 }
+
 tr td:nth-child(2) {
   width: 45%;
 }
+
 tr td:nth-child(3) {
   width: 10%;
 }
+
 tr td:nth-child(4) {
   width: 20%;
 }
+
 tr td:nth-child(5) {
   width: 10%;
 }
+
 tr td:nth-child(6) {
   width: 10%;
 }
@@ -59,38 +64,47 @@ tbody.tbody--normal tr.rated--1,
 tbody.tbody--reverse tr.rated--1 {
   order: 10;
 }
+
 tbody.tbody--normal tr.rated--2,
 tbody.tbody--reverse tr.rated--2 {
   order: 9;
 }
+
 tbody.tbody--normal tr.rated--3,
 tbody.tbody--reverse tr.rated--3 {
   order: 8;
 }
+
 tbody.tbody--normal tr.rated--4,
 tbody.tbody--reverse tr.rated--4 {
   order: 7;
 }
+
 tbody.tbody--normal tr.rated--5,
 tbody.tbody--reverse tr.rated--5 {
   order: 6;
 }
+
 tbody.tbody--normal tr.rated--6,
 tbody.tbody--reverse tr.rated--6 {
   order: 5;
 }
+
 tbody.tbody--normal tr.rated--7,
 tbody.tbody--reverse tr.rated--7 {
   order: 4;
 }
+
 tbody.tbody--normal tr.rated--8,
 tbody.tbody--reverse tr.rated--8 {
   order: 3;
 }
+
 tbody.tbody--normal tr.rated--9,
 tbody.tbody--reverse tr.rated--9 {
   order: 2;
 }
+
 tbody.tbody--normal tr.rated--10,
 tbody.tbody--reverse tr.rated--10 {
   order: 1;
@@ -109,7 +123,7 @@ body {
   background-color: #263238;
 }
 
-.panel-default > .panel-heading {
+.panel-default>.panel-heading {
   background-color: #263835;
   color: #ccc;
   border-color: #555;
@@ -120,24 +134,43 @@ body {
   border-color: #555;
 }
 
-.table > thead > tr > th {
+.table>thead>tr>th {
   border-bottom: 1px solid #555;
 }
 
-.table > thead > tr > th,
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td {
+.table>thead>tr>th,
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
   border-top: 1px solid #555;
 }
 
-.table-hover > tbody > tr:hover {
+.table-hover>tbody>tr:hover {
   background-color: #263835;
 }
 
 .navbar-default {
   background-color: #222d32;
   border-color: #263835;
+}
+
+.spoiler {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.spoiler:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.spoiler.changed .caret {
+  transform: rotate(180deg);
+}
+
+.spoiler .caret {
+  margin-left: 5px;
 }

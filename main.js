@@ -1,5 +1,8 @@
-var targetBody = getTableElements("tbody");
-var targetRows = getTableElements("tr");
+var completedBody = getTableElements("tbody", "Completed");
+var completedRows = getTableElements("tr", "Completed");
+
+var planBody = getTableElements("tbody", "Plan to Play");
+var planRows = getTableElements("tr", "Plan to Play");
 
 function searchTargetHeading(selector, text) {
   var elements = [].slice.call(document.querySelectorAll(selector));
@@ -19,8 +22,8 @@ function getNextSibling(elem, selector) {
   }
 }
 
-function getTableElements(elem) {
-  var targetHeader = searchTargetHeading("h4", "Completed")[0];
+function getTableElements(elem, title) {
+  var targetHeader = searchTargetHeading("h4", title)[0];
   var targetTable = getNextSibling(targetHeader, ".table");
   var targetTb = targetTable.getElementsByTagName("tbody")[0];
   var targetTr = targetTable.getElementsByTagName("tr");
@@ -40,56 +43,146 @@ function getTableElements(elem) {
 }
 
 function prepareRows() {
-  for (let index = 0; index < targetRows.length; index++) {
-    var rowRating = targetRows[index].children[2].textContent;
-    targetRows[index].classList.add("rated--" + rowRating);
+  for (let index = 0; index < completedRows.length; index++) {
+    var rowRating = completedRows[index].children[2].textContent;
+    completedRows[index].classList.add("rated--" + rowRating);
+  }
+
+  for (let index = 0; index < planRows.length; index++) {
+    var rowPriority = planRows[index].children[4].textContent;
+
+    switch (rowPriority) {
+      case "Low": {
+        planRows[index].classList.add("rated--1");
+        break;
+      }
+
+      case "Medium": {
+        planRows[index].classList.add("rated--2");
+        break;
+      }
+
+      case "High": {
+        planRows[index].classList.add("rated--3");
+        break;
+      }
+
+      default: {
+        planRows[index].classList.add("rated--4")
+      }
+    }
   }
 }
 
-function makeSortButton() {
-  var sortButton = document.createElement("i");
-  sortButton.classList.add("caret");
-  targetRows[0].children[2].appendChild(sortButton);
+function placeCarrets() {
+  var sortByRating = document.createElement("i");
+  sortByRating.classList.add("caret", "rating");
+
+  var sortByPriority = document.createElement("i");
+  sortByPriority.classList.add("caret", "priority");
+
+  completedRows[0].children[2].appendChild(sortByRating);
+  planRows[0].children[4].appendChild(sortByPriority);
 }
 
-function sortRows() {
-  var tbodyClassname = targetBody.className;
+function placePlus() {
+  var targetCont = searchTargetHeading("h4", "Continuously Playing")[0];
+  var targetCompl = searchTargetHeading("h4", "Completed")[0];
+  var targetDrop = searchTargetHeading("h4", "Dropped")[0];
+  var targetPlan = searchTargetHeading("h4", "Plan to Play")[0];
+
+  var targets = [targetCont, targetCompl, targetDrop, targetPlan];
+
+  for (let index = 0; index < targets.length; index++) {
+    targets[index].classList.add('spoiler');
+    targets[index].innerHTML += '<i class="caret"></i>'
+  }
+}
+
+function sortRows(scope) {
+  var tbodyClassname;
+
+  if (scope == 'rating') {
+    tbodyClassname = completedBody.className;
+  } else if (scope == 'priority') {
+    tbodyClassname = planBody.className;
+  }
 
   switch (tbodyClassname) {
     case "tbody--normal": {
-      sortAscending();
+      sortAscending(scope);
       break;
     }
     case "tbody--reverse": {
-      sortDescending();
+      sortDescending(scope);
       break;
     }
     default: {
-      sortDefault();
+      sortDefault(scope);
     }
   }
 }
 
-function sortDefault() {
-  targetBody.classList.add("tbody--normal");
-  for (let index = 0; index < targetRows.length; index++) {
-    targetRows[index].children[2].classList.add("sortable");
+function sortDefault(scope) {
+  if (scope == 'rating') {
+    completedBody.classList.add("tbody--normal");
+    for (let index = 0; index < completedRows.length; index++) {
+      completedRows[index].children[2].classList.add("sortable");
+    }
+  } else if (scope == 'priority') {
+    planBody.classList.add("tbody--normal");
+    for (let index = 0; index < planRows.length; index++) {
+      planRows[index].children[4].classList.add("sortable");
+    }
   }
 }
 
-function sortAscending() {
-  targetBody.classList.remove("tbody--normal");
-  targetBody.classList.add("tbody--reverse");
-  document.querySelector("th .caret").classList.add("caret--flipped");
+function sortAscending(scope) {
+  if (scope == 'rating') {
+    completedBody.classList.remove("tbody--normal");
+    completedBody.classList.add("tbody--reverse");
+    document.querySelector("th .rating").classList.add("caret--flipped");
+  } else if (scope == 'priority') {
+    planBody.classList.remove("tbody--normal");
+    planBody.classList.add("tbody--reverse");
+    document.querySelector("th .priority").classList.add("caret--flipped");
+  }
 }
 
-function sortDescending() {
-  targetBody.classList.remove("tbody--reverse");
-  targetBody.classList.add("tbody--normal");
-  document.querySelector("th .caret").classList.remove("caret--flipped");
+function sortDescending(scope) {
+  if (scope == 'rating') {
+    completedBody.classList.remove("tbody--reverse");
+    completedBody.classList.add("tbody--normal");
+    document.querySelector("th .rating").classList.remove("caret--flipped");
+  } else if (scope == 'priority') {
+    planBody.classList.remove("tbody--reverse");
+    planBody.classList.add("tbody--normal");
+    document.querySelector("th .priority").classList.remove("caret--flipped");
+  }
+}
+
+function spoilerTable(event) {
+  var targetSpoiler = event.target;
+  var targetTable = getNextSibling(event.target, ".table");
+
+  targetSpoiler.classList.toggle('changed')
+  targetTable.classList.toggle('hidden');
 }
 
 prepareRows();
-makeSortButton();
+placeCarrets();
+placePlus();
 
-document.querySelector("th .caret").addEventListener("click", sortRows);
+document.querySelector("th .rating").addEventListener("click", function () {
+  sortRows('rating')
+});
+
+document.querySelector("th .priority").addEventListener("click", function () {
+  sortRows('priority')
+});
+
+var spoliers = document.querySelectorAll('.spoiler');
+
+for (let index = 0; index < spoliers.length; index++) {
+  spoliers[index].addEventListener('click', spoilerTable);
+}
