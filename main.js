@@ -86,13 +86,19 @@ function placeCarrets() {
 }
 
 function placePlus() {
+  var targets = [];
+
   var targetCurr = searchTargetHeading("h4", "Currently Playing")[0];
   var targetCont = searchTargetHeading("h4", "Continuously Playing")[0];
   var targetCompl = searchTargetHeading("h4", "Completed")[0];
   var targetDrop = searchTargetHeading("h4", "Dropped")[0];
   var targetPlan = searchTargetHeading("h4", "Plan to Play")[0];
 
-  var targets = [targetCurr, targetCont, targetCompl, targetDrop, targetPlan];
+  if (targetCurr != undefined) targets.push(targetCurr);
+  if (targetCont != undefined) targets.push(targetCont);
+  if (targetCompl != undefined) targets.push(targetCompl);
+  if (targetDrop != undefined) targets.push(targetDrop);
+  if (targetPlan != undefined) targets.push(targetPlan);
 
   for (let index = 0; index < targets.length; index++) {
     targets[index].classList.add('spoiler');
