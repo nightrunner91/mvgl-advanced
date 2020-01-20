@@ -68,7 +68,7 @@ function prepareRows() {
       }
 
       default: {
-        planRows[index].classList.add("rated--4")
+        planRows[index].classList.add("rated--4");
       }
     }
   }
@@ -91,36 +91,38 @@ function placePlus() {
   var targetCurr = searchTargetHeading("h4", "Currently Playing")[0];
   var targetCont = searchTargetHeading("h4", "Continuously Playing")[0];
   var targetCompl = searchTargetHeading("h4", "Completed")[0];
+  var targetHold = searchTargetHeading("h4", "On-Hold")[0];
   var targetDrop = searchTargetHeading("h4", "Dropped")[0];
   var targetPlan = searchTargetHeading("h4", "Plan to Play")[0];
 
   if (targetCurr != undefined) targets.push(targetCurr);
   if (targetCont != undefined) targets.push(targetCont);
   if (targetCompl != undefined) targets.push(targetCompl);
+  if (targetHold != undefined) targets.push(targetHold);
   if (targetDrop != undefined) targets.push(targetDrop);
   if (targetPlan != undefined) targets.push(targetPlan);
 
   for (let index = 0; index < targets.length; index++) {
-    targets[index].classList.add('spoiler');
-    targets[index].innerHTML += '<i class="caret"></i>'
+    targets[index].classList.add("spoiler");
+    targets[index].innerHTML += '<i class="caret"></i>';
   }
 }
 
 function replaceIcons() {
-  var targetIcons = document.querySelectorAll('.fa-file-text-o');
+  var targetIcons = document.querySelectorAll(".fa-file-text-o");
 
   for (let index = 0; index < targetIcons.length; index++) {
-    targetIcons[index].classList.remove('fa-file-text-o');
-    targetIcons[index].classList.add('fa-sticky-note');
+    targetIcons[index].classList.remove("fa-file-text-o");
+    targetIcons[index].classList.add("fa-sticky-note");
   }
 }
 
 function sortRows(scope) {
   var tbodyClassname;
 
-  if (scope == 'rating') {
+  if (scope == "rating") {
     tbodyClassname = completedBody.className;
-  } else if (scope == 'priority') {
+  } else if (scope == "priority") {
     tbodyClassname = planBody.className;
   }
 
@@ -140,12 +142,12 @@ function sortRows(scope) {
 }
 
 function sortDefault(scope) {
-  if (scope == 'rating') {
+  if (scope == "rating") {
     completedBody.classList.add("tbody--normal");
     for (let index = 0; index < completedRows.length; index++) {
       completedRows[index].children[2].classList.add("sortable");
     }
-  } else if (scope == 'priority') {
+  } else if (scope == "priority") {
     planBody.classList.add("tbody--normal");
     for (let index = 0; index < planRows.length; index++) {
       planRows[index].children[4].classList.add("sortable");
@@ -154,11 +156,11 @@ function sortDefault(scope) {
 }
 
 function sortAscending(scope) {
-  if (scope == 'rating') {
+  if (scope == "rating") {
     completedBody.classList.remove("tbody--normal");
     completedBody.classList.add("tbody--reverse");
     document.querySelector("th .rating").classList.add("caret--flipped");
-  } else if (scope == 'priority') {
+  } else if (scope == "priority") {
     planBody.classList.remove("tbody--normal");
     planBody.classList.add("tbody--reverse");
     document.querySelector("th .priority").classList.add("caret--flipped");
@@ -166,11 +168,11 @@ function sortAscending(scope) {
 }
 
 function sortDescending(scope) {
-  if (scope == 'rating') {
+  if (scope == "rating") {
     completedBody.classList.remove("tbody--reverse");
     completedBody.classList.add("tbody--normal");
     document.querySelector("th .rating").classList.remove("caret--flipped");
-  } else if (scope == 'priority') {
+  } else if (scope == "priority") {
     planBody.classList.remove("tbody--reverse");
     planBody.classList.add("tbody--normal");
     document.querySelector("th .priority").classList.remove("caret--flipped");
@@ -181,8 +183,8 @@ function spoilerTable(event) {
   var targetSpoiler = event.target;
   var targetTable = getNextSibling(event.target, ".table");
 
-  targetSpoiler.classList.toggle('changed')
-  targetTable.classList.toggle('hidden');
+  targetSpoiler.classList.toggle("changed");
+  targetTable.classList.toggle("hidden");
 }
 
 prepareRows();
@@ -190,16 +192,16 @@ placeCarrets();
 placePlus();
 replaceIcons();
 
-document.querySelector("th .rating").addEventListener("click", function () {
-  sortRows('rating')
+document.querySelector("th .rating").addEventListener("click", function() {
+  sortRows("rating");
 });
 
-document.querySelector("th .priority").addEventListener("click", function () {
-  sortRows('priority')
+document.querySelector("th .priority").addEventListener("click", function() {
+  sortRows("priority");
 });
 
-var spoliers = document.querySelectorAll('.spoiler');
+var spoliers = document.querySelectorAll(".spoiler");
 
 for (let index = 0; index < spoliers.length; index++) {
-  spoliers[index].addEventListener('click', spoilerTable);
+  spoliers[index].addEventListener("click", spoilerTable);
 }
