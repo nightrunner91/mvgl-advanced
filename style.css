@@ -15,6 +15,14 @@ tbody.tbody--reverse {
   flex-direction: column-reverse;
 }
 
+tbody.tbody--normal-hours {
+  flex-direction: column;
+}
+
+tbody.tbody--reverse-hours {
+  flex-direction: column-reverse;
+}
+
 th {
   user-select: none;
 }
@@ -36,28 +44,33 @@ tr {
   display: flex;
 }
 
-tr td:nth-child(1) {
+tr td:nth-child(1), tr th:nth-child(1) {
   width: 5%;
 }
 
-tr td:nth-child(2) {
-  width: 45%;
+tr td:nth-child(2), tr th:nth-child(2) {
+  width: 35%;
 }
 
-tr td:nth-child(3) {
+tr td:nth-child(3), tr th:nth-child(3) {
   width: 10%;
 }
 
-tr td:nth-child(4) {
-  width: 20%;
+tr td:nth-child(4), tr th:nth-child(4) {
+  width: 15%;
 }
 
-tr td:nth-child(5) {
+tr td:nth-child(5), tr th:nth-child(5) {
   width: 10%;
 }
 
-tr td:nth-child(6) {
+tr td:nth-child(6), tr th:nth-child(6) {
+  flex: 1;
   width: 10%;
+}
+
+tr td:nth-child(7), tr th:nth-child(7) {
+  width: 15%;
 }
 
 tbody.tbody--normal tr.rated--1,
@@ -83,31 +96,100 @@ tbody.tbody--reverse tr.rated--4 {
 tbody.tbody--normal tr.rated--5,
 tbody.tbody--reverse tr.rated--5 {
   order: 6;
+  background-color: rgba(239, 83, 80, 0.1);
 }
 
 tbody.tbody--normal tr.rated--6,
 tbody.tbody--reverse tr.rated--6 {
   order: 5;
+  background-color: rgba(239, 83, 80, 0.1);
 }
 
 tbody.tbody--normal tr.rated--7,
 tbody.tbody--reverse tr.rated--7 {
   order: 4;
+  background-color: rgba(255, 234, 0, 0.1);
 }
 
 tbody.tbody--normal tr.rated--8,
 tbody.tbody--reverse tr.rated--8 {
   order: 3;
+  background-color: rgba(255, 234, 0, 0.1);
 }
 
 tbody.tbody--normal tr.rated--9,
 tbody.tbody--reverse tr.rated--9 {
   order: 2;
+  background-color: rgba(0, 200, 83, 0.1);
 }
 
 tbody.tbody--normal tr.rated--10,
 tbody.tbody--reverse tr.rated--10 {
   order: 1;
+  background-color: rgba(0, 200, 83, 0.1);
+}
+
+tbody.tbody--normal-hours tr.hours--1,
+tbody.tbody--reverse-hours tr.hours--1 {
+  order: 12;
+}
+
+tbody.tbody--normal-hours tr.hours--2,
+tbody.tbody--reverse-hours tr.hours--2 {
+  order: 11;
+}
+
+tbody.tbody--normal-hours tr.hours--3,
+tbody.tbody--reverse-hours tr.hours--3 {
+  order: 10;
+}
+
+tbody.tbody--normal-hours tr.hours--4,
+tbody.tbody--reverse-hours tr.hours--4 {
+  order: 9;
+}
+
+tbody.tbody--normal-hours tr.hours--5,
+tbody.tbody--reverse-hours tr.hours--5 {
+  order: 8;
+}
+
+tbody.tbody--normal-hours tr.hours--6,
+tbody.tbody--reverse-hours tr.hours--6 {
+  order: 7;
+}
+
+tbody.tbody--normal-hours tr.hours--7,
+tbody.tbody--reverse-hours tr.hours--7 {
+  order: 6;
+}
+
+tbody.tbody--normal-hours tr.hours--8,
+tbody.tbody--reverse-hours tr.hours--8 {
+  order: 5;
+}
+
+tbody.tbody--normal-hours tr.hours--9,
+tbody.tbody--reverse-hours tr.hours--9 {
+  order: 4;
+}
+
+tbody.tbody--normal-hours tr.hours--10,
+tbody.tbody--reverse-hours tr.hours--10 {
+  order: 3;
+  background-color: rgba(0, 200, 83, 0.1);
+}
+
+tbody.tbody--normal-hours tr.hours--11,
+tbody.tbody--reverse-hours tr.hours--11 {
+  order: 2;
+  background-color: rgba(0, 200, 83, 0.1);
+}
+
+tbody.tbody--normal-hours tr.hours--12,
+tbody.tbody--reverse-hours tr.hours--12 {
+  order: 1;
+  background-color: rgba(0, 200, 83, 0.1);
 }
 
 /* Black design */
@@ -148,7 +230,7 @@ body {
 }
 
 .table-hover>tbody>tr:hover {
-  background-color: #263835;
+  background-color: rgba(0,0,0, 0.1) !important;
 }
 
 .navbar-default {
