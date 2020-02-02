@@ -96,37 +96,31 @@ tbody.tbody--reverse tr.rated--4 {
 tbody.tbody--normal tr.rated--5,
 tbody.tbody--reverse tr.rated--5 {
   order: 6;
-  background-color: rgba(239, 83, 80, 0.1);
 }
 
 tbody.tbody--normal tr.rated--6,
 tbody.tbody--reverse tr.rated--6 {
   order: 5;
-  background-color: rgba(239, 83, 80, 0.1);
 }
 
 tbody.tbody--normal tr.rated--7,
 tbody.tbody--reverse tr.rated--7 {
   order: 4;
-  background-color: rgba(255, 234, 0, 0.1);
 }
 
 tbody.tbody--normal tr.rated--8,
 tbody.tbody--reverse tr.rated--8 {
   order: 3;
-  background-color: rgba(255, 234, 0, 0.1);
 }
 
 tbody.tbody--normal tr.rated--9,
 tbody.tbody--reverse tr.rated--9 {
   order: 2;
-  background-color: rgba(0, 200, 83, 0.1);
 }
 
 tbody.tbody--normal tr.rated--10,
 tbody.tbody--reverse tr.rated--10 {
   order: 1;
-  background-color: rgba(0, 200, 83, 0.1);
 }
 
 tbody.tbody--normal-hours tr.hours--1,
@@ -177,19 +171,16 @@ tbody.tbody--reverse-hours tr.hours--9 {
 tbody.tbody--normal-hours tr.hours--10,
 tbody.tbody--reverse-hours tr.hours--10 {
   order: 3;
-  background-color: rgba(0, 200, 83, 0.1);
 }
 
 tbody.tbody--normal-hours tr.hours--11,
 tbody.tbody--reverse-hours tr.hours--11 {
   order: 2;
-  background-color: rgba(0, 200, 83, 0.1);
 }
 
 tbody.tbody--normal-hours tr.hours--12,
 tbody.tbody--reverse-hours tr.hours--12 {
   order: 1;
-  background-color: rgba(0, 200, 83, 0.1);
 }
 
 /* Black design */
