@@ -181,11 +181,23 @@ function placePlus() {
 }
 
 function replaceIcons() {
-  var targetIcons = document.querySelectorAll(".fa-file-text-o");
+  var notesIcons = document.querySelectorAll(".fa-file-text-o");
+  var digitalIcons = document.querySelectorAll(".fa-download");
+  var piratesIcons = document.querySelectorAll(".fa-play-circle-o");
 
-  for (let index = 0; index < targetIcons.length; index++) {
-    targetIcons[index].classList.remove("fa-file-text-o");
-    targetIcons[index].classList.add("fa-sticky-note");
+  for (let index = 0; index < notesIcons.length; index++) {
+    notesIcons[index].classList.remove("fa-file-text-o");
+    notesIcons[index].classList.add("fa-sticky-note");
+  }
+
+  for (let index = 0; index < digitalIcons.length; index++) {
+    digitalIcons[index].classList.remove("fa-download");
+    digitalIcons[index].classList.add("fa-wallet");
+  }
+
+  for (let index = 0; index < piratesIcons.length; index++) {
+    piratesIcons[index].classList.remove("fa-play-circle-o");
+    piratesIcons[index].classList.add("fa-skull-crossbones");
   }
 }
 

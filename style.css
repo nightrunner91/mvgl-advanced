@@ -247,6 +247,7 @@ tbody.tbody--reverse-rating tr.rated--1:before {
 
 body {
   background: #222d32;
+  font-size: 14px;
 }
 
 .panel {
@@ -293,6 +294,7 @@ body {
   display: flex;
   align-items: center;
   cursor: pointer;
+  padding: 10px;
   transition: all 0.3s ease;
 }
 
@@ -306,4 +308,10 @@ body {
 
 .spoiler .caret {
   margin-left: 5px;
+}
+
+table>tbody>tr>td:nth-child(2) a {
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: 700;
 }
