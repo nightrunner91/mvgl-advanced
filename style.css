@@ -35,7 +35,13 @@ td.sortable {
 }
 
 tr {
+  position: relative;
   display: flex;
+}
+
+tr td {
+  position: relative;
+  z-index: 1;
 }
 
 tr td:nth-child(1), tr th:nth-child(1) {
@@ -117,6 +123,50 @@ tbody.tbody--reverse-rating tr.rated--9 {
 tbody.tbody--normal-rating tr.rated--10,
 tbody.tbody--reverse-rating tr.rated--10 {
   order: 1;
+}
+
+/* Colors */
+tbody.tbody--normal-rating tr.rated--10:before,
+tbody.tbody--reverse-rating tr.rated--10:before,
+tbody.tbody--normal-rating tr.rated--9:before,
+tbody.tbody--reverse-rating tr.rated--9:before,
+tbody.tbody--normal-rating tr.rated--8:before,
+tbody.tbody--reverse-rating tr.rated--8:before,
+tbody.tbody--normal-rating tr.rated--7:before,
+tbody.tbody--reverse-rating tr.rated--7:before,
+tbody.tbody--normal-rating tr.rated--6:before,
+tbody.tbody--reverse-rating tr.rated--6:before,
+tbody.tbody--normal-rating tr.rated--5:before,
+tbody.tbody--reverse-rating tr.rated--5:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  height: 100%;
+}
+
+tbody.tbody--normal-rating tr.rated--10:before,
+tbody.tbody--reverse-rating tr.rated--10:before,
+tbody.tbody--normal-rating tr.rated--9:before,
+tbody.tbody--reverse-rating tr.rated--9:before {
+  background: #00C853;
+}
+
+tbody.tbody--normal-rating tr.rated--8:before,
+tbody.tbody--reverse-rating tr.rated--8:before,
+tbody.tbody--normal-rating tr.rated--7:before,
+tbody.tbody--reverse-rating tr.rated--7:before {
+  background: #EEFF41;
+}
+
+tbody.tbody--normal-rating tr.rated--6:before,
+tbody.tbody--reverse-rating tr.rated--6:before,
+tbody.tbody--normal-rating tr.rated--5:before,
+tbody.tbody--reverse-rating tr.rated--5:before {
+  background: #EF5350;
 }
 
 /* Hours */
