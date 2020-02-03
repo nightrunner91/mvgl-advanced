@@ -199,12 +199,12 @@ function sortRows(scope) {
   }
 
   switch (tbodyClassname) {
-    case "tbody--normal":
+    case "tbody--normal-rating":
     case "tbody--normal-hours": {
       sortAscending(scope);
       break;
     }
-    case "tbody--reverse":
+    case "tbody--reverse-rating":
     case "tbody--reverse-hours": {
       sortDescending(scope);
       break;
@@ -218,20 +218,20 @@ function sortRows(scope) {
 function sortDefault(scope) {
   if (scope == "rating") {
     completedBody.classList.remove("tbody--normal-hours");
-    completedBody.classList.add("tbody--normal");
+    completedBody.classList.add("tbody--normal-rating");
     for (let index = 0; index < completedRows.length; index++) {
       completedRows[index].children[3].classList.remove("sortable");
       completedRows[index].children[2].classList.add("sortable");
     }
   } else if (scope == "hours") {
-    completedBody.classList.remove("tbody--normal");
+    completedBody.classList.remove("tbody--normal-rating");
     completedBody.classList.add("tbody--normal-hours");
     for (let index = 0; index < completedRows.length; index++) {
       completedRows[index].children[2].classList.remove("sortable");
       completedRows[index].children[3].classList.add("sortable");
     }
   } else if (scope == "priority") {
-    planBody.classList.add("tbody--normal");
+    planBody.classList.add("tbody--normal-rating");
     for (let index = 0; index < planRows.length; index++) {
       planRows[index].children[4].classList.add("sortable");
     }
@@ -241,8 +241,8 @@ function sortDefault(scope) {
 function sortAscending(scope) {
   if (scope == "rating") {
     completedBody.classList.remove("tbody--normal-hours");
-    completedBody.classList.remove("tbody--normal");
-    completedBody.classList.add("tbody--reverse");
+    completedBody.classList.remove("tbody--normal-rating");
+    completedBody.classList.add("tbody--reverse-rating");
     document.querySelector("th .hours").classList.remove("caret--flipped");
     document.querySelector("th .rating").classList.add("caret--flipped");
     for (let index = 0; index < completedRows.length; index++) {
@@ -250,7 +250,7 @@ function sortAscending(scope) {
       completedRows[index].children[2].classList.add("sortable");
     }
   } else if (scope == "hours") {
-    completedBody.classList.remove("tbody--normal");
+    completedBody.classList.remove("tbody--normal-rating");
     completedBody.classList.remove("tbody--normal-hours");
     completedBody.classList.add("tbody--reverse-hours");
     document.querySelector("th .rating").classList.remove("caret--flipped");
@@ -260,8 +260,8 @@ function sortAscending(scope) {
       completedRows[index].children[3].classList.add("sortable");
     }
   } else if (scope == "priority") {
-    planBody.classList.remove("tbody--normal");
-    planBody.classList.add("tbody--reverse");
+    planBody.classList.remove("tbody--normal-rating");
+    planBody.classList.add("tbody--reverse-rating");
     document.querySelector("th .priority").classList.add("caret--flipped");
   }
 }
@@ -269,8 +269,8 @@ function sortAscending(scope) {
 function sortDescending(scope) {
   if (scope == "rating") {
     completedBody.classList.remove("tbody--reverse-hours");
-    completedBody.classList.remove("tbody--reverse");
-    completedBody.classList.add("tbody--normal");
+    completedBody.classList.remove("tbody--reverse-rating");
+    completedBody.classList.add("tbody--normal-rating");
     document.querySelector("th .hours").classList.remove("caret--flipped");
     document.querySelector("th .rating").classList.remove("caret--flipped");
     for (let index = 0; index < completedRows.length; index++) {
@@ -278,7 +278,7 @@ function sortDescending(scope) {
       completedRows[index].children[2].classList.add("sortable");
     }
   } else if (scope == "hours") {
-    completedBody.classList.remove("tbody--reverse");
+    completedBody.classList.remove("tbody--reverse-rating");
     completedBody.classList.remove("tbody--reverse-hours");
     completedBody.classList.add("tbody--normal-hours");
     document.querySelector("th .rating").classList.remove("caret--flipped");
@@ -288,8 +288,8 @@ function sortDescending(scope) {
       completedRows[index].children[3].classList.add("sortable");
     }
   } else if (scope == "priority") {
-    planBody.classList.remove("tbody--reverse");
-    planBody.classList.add("tbody--normal");
+    planBody.classList.remove("tbody--reverse-rating");
+    planBody.classList.add("tbody--normal-rating");
     document.querySelector("th .priority").classList.remove("caret--flipped");
   }
 }

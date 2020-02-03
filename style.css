@@ -7,18 +7,12 @@ tbody {
   width: 100%;
 }
 
-tbody.tbody--normal {
-  flex-direction: column;
-}
-
-tbody.tbody--reverse {
-  flex-direction: column-reverse;
-}
-
+tbody.tbody--normal-rating, 
 tbody.tbody--normal-hours {
   flex-direction: column;
 }
 
+tbody.tbody--reverse-rating,
 tbody.tbody--reverse-hours {
   flex-direction: column-reverse;
 }
@@ -73,55 +67,59 @@ tr td:nth-child(7), tr th:nth-child(7) {
   width: 15%;
 }
 
-tbody.tbody--normal tr.rated--1,
-tbody.tbody--reverse tr.rated--1 {
+/* Rating */
+
+tbody.tbody--normal-rating tr.rated--1,
+tbody.tbody--reverse-rating tr.rated--1 {
   order: 10;
 }
 
-tbody.tbody--normal tr.rated--2,
-tbody.tbody--reverse tr.rated--2 {
+tbody.tbody--normal-rating tr.rated--2,
+tbody.tbody--reverse-rating tr.rated--2 {
   order: 9;
 }
 
-tbody.tbody--normal tr.rated--3,
-tbody.tbody--reverse tr.rated--3 {
+tbody.tbody--normal-rating tr.rated--3,
+tbody.tbody--reverse-rating tr.rated--3 {
   order: 8;
 }
 
-tbody.tbody--normal tr.rated--4,
-tbody.tbody--reverse tr.rated--4 {
+tbody.tbody--normal-rating tr.rated--4,
+tbody.tbody--reverse-rating tr.rated--4 {
   order: 7;
 }
 
-tbody.tbody--normal tr.rated--5,
-tbody.tbody--reverse tr.rated--5 {
+tbody.tbody--normal-rating tr.rated--5,
+tbody.tbody--reverse-rating tr.rated--5 {
   order: 6;
 }
 
-tbody.tbody--normal tr.rated--6,
-tbody.tbody--reverse tr.rated--6 {
+tbody.tbody--normal-rating tr.rated--6,
+tbody.tbody--reverse-rating tr.rated--6 {
   order: 5;
 }
 
-tbody.tbody--normal tr.rated--7,
-tbody.tbody--reverse tr.rated--7 {
+tbody.tbody--normal-rating tr.rated--7,
+tbody.tbody--reverse-rating tr.rated--7 {
   order: 4;
 }
 
-tbody.tbody--normal tr.rated--8,
-tbody.tbody--reverse tr.rated--8 {
+tbody.tbody--normal-rating tr.rated--8,
+tbody.tbody--reverse-rating tr.rated--8 {
   order: 3;
 }
 
-tbody.tbody--normal tr.rated--9,
-tbody.tbody--reverse tr.rated--9 {
+tbody.tbody--normal-rating tr.rated--9,
+tbody.tbody--reverse-rating tr.rated--9 {
   order: 2;
 }
 
-tbody.tbody--normal tr.rated--10,
-tbody.tbody--reverse tr.rated--10 {
+tbody.tbody--normal-rating tr.rated--10,
+tbody.tbody--reverse-rating tr.rated--10 {
   order: 1;
 }
+
+/* Hours */
 
 tbody.tbody--normal-hours tr.hours--1,
 tbody.tbody--reverse-hours tr.hours--1 {
