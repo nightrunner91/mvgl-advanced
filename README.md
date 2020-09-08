@@ -1,6 +1,6 @@
 <div align="center">
   <h1>MyVideoGameList Advanced</h1>
-  <p>Some code to improve default look and posibilities of [myvideogamelist.com](https://myvideogamelist.com/)</p>
+  <p>Some code to improve default look and posibilities of <a href='https://myvideogamelist.com/'>myvideogamelist.com</a></p>
 </div>
 
 ## Features included:
