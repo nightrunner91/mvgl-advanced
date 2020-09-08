@@ -10,7 +10,7 @@
 - Sort your games by hours/rating
 - Hide/show games by category
 - New icons
-- Fix issues on original website
+- Fixed issues of original website
 
 ## How to use it?
 
