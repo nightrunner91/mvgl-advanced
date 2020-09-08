@@ -1,5 +1,7 @@
-# MyVideoGameList Advanced
-Plugin for sorting games list by personal rating on [myvideogamelist.com](https://myvideogamelist.com/)
+<div align="center">
+  <h1>MyVideoGameList Advanced</h1>
+  <p>Some code to improve default look and posibilities of [myvideogamelist.com](https://myvideogamelist.com/)</p>
+</div>
 
 ## Features included:
 
