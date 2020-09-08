@@ -19,3 +19,7 @@
 3) And that's it!
 
 P.S.: you may try run it on another browser, for example Firefox has similar plugin names [Modus](https://addons.mozilla.org/ru/firefox/addon/modus-css-js/?src=search).
+
+## Known issues:
+
+* When user haven't scored game rating and played hours, script don't work at all
