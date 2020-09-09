@@ -71,4 +71,4 @@ P.S.: you may try run it on another browser, for example Firefox has similar plu
 ## Known issues:
 
 ~~* When user haven't scored game rating and played hours, script don't work at all~~
-
+~~* Hide/show games by category don't work if user don't have any "Plan to play" games~~
