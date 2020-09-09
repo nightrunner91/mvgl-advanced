@@ -123,22 +123,22 @@ function prepareRows() {
 
       switch (rowPriority) {
         case "Low": {
-          planRows[index].classList.add("rated--1");
+          planRows[index].classList.add("priority--low");
           break;
         }
 
         case "Medium": {
-          planRows[index].classList.add("rated--2");
+          planRows[index].classList.add("priority--medium");
           break;
         }
 
         case "High": {
-          planRows[index].classList.add("rated--3");
+          planRows[index].classList.add("priority--high");
           break;
         }
 
         default: {
-          planRows[index].classList.add("rated--4");
+          planRows[index].classList.add("priority--none");
         }
       }
     }
@@ -149,7 +149,7 @@ function placeCarrets() {
   if (completedRows != undefined) {
     var sortByRating = document.createElement("i");
     sortByRating.classList.add("caret", "rating");
-    
+
     completedRows[0].children[2].appendChild(sortByRating);
 
     let rows = [];
