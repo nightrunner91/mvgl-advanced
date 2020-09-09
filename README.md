@@ -75,6 +75,6 @@ P.S.: you may try run it on another browser, for example Firefox has similar plu
 
 ## To-do list
 
-* Analyze and correct design issues caused by black theme
+* Analyze and correct design issues caused by dark theme
 * Store hidden categories in localStorage
 * Add placeholder or icon when ownership status isn't set at all
