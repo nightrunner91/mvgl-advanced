@@ -145,16 +145,25 @@ function placeCarrets() {
   var sortByPriority = document.createElement("i");
   sortByPriority.classList.add("caret", "priority");
 
-  var headerHours = document.createElement('th');
-  headerHours.innerHTML = 'Time Played';
-  var sortByHours = document.createElement("i");
-  sortByHours.classList.add("caret", "hours");
-
-  insertAfter(headerHours, completedRows[0].children[2]);
-
   completedRows[0].children[2].appendChild(sortByRating);
   planRows[0].children[4].appendChild(sortByPriority);
-  completedRows[0].children[3].appendChild(sortByHours);
+
+  let rows = [];
+
+  for (let index = 1; index < completedRows.length; index++) {
+    rows.push(completedRows[index].children.length);
+  }
+
+  if (rows.some(elem => elem > 5)) {
+    var headerHours = document.createElement('th');
+    headerHours.innerHTML = 'Time Played';
+    var sortByHours = document.createElement("i");
+    sortByHours.classList.add("caret", "hours");
+
+    insertAfter(headerHours, completedRows[0].children[2]);
+
+    completedRows[0].children[3].appendChild(sortByHours);
+  }
 }
 
 function placePlus() {
@@ -320,11 +329,13 @@ function insertAfter(el, referenceNode) {
 
 function setHours() {
   for (let index = 1; index < completedRows.length; index++) {
-    var rowModalId = completedRows[index].children[5].querySelector('[data-target]').dataset.target;
-    var rowModalHours = document.querySelector(rowModalId).querySelector('.text-light').childNodes[7].textContent;
-    var hoursColumn = document.createElement('td');
-    hoursColumn.innerHTML = rowModalHours;
-    insertAfter(hoursColumn, completedRows[index].children[2]);
+    if (completedRows[index].children[5] != undefined) {
+      var rowModalId = completedRows[index].children[5].querySelector('[data-target]').dataset.target;
+      var rowModalHours = document.querySelector(rowModalId).querySelector('.text-light').childNodes[7].textContent;
+      var hoursColumn = document.createElement('td');
+      hoursColumn.innerHTML = rowModalHours;
+      insertAfter(hoursColumn, completedRows[index].children[2]);
+    }
   }
 }
 
@@ -334,17 +345,23 @@ placeCarrets();
 placePlus();
 replaceIcons();
 
-document.querySelector("th .rating").addEventListener("click", function() {
-  sortRows("rating");
-});
+if (document.querySelector("th .rating")) {
+  document.querySelector("th .rating").addEventListener("click", function() {
+    sortRows("rating");
+  });
+}
 
-document.querySelector("th .priority").addEventListener("click", function() {
-  sortRows("priority");
-});
+if (document.querySelector("th .priority")) {
+  document.querySelector("th .priority").addEventListener("click", function() {
+    sortRows("priority");
+  });
+}
 
-document.querySelector("th .hours").addEventListener("click", function() {
-  sortRows("hours");
-});
+if (document.querySelector("th .hours")) {
+  document.querySelector("th .hours").addEventListener("click", function() {
+    sortRows("hours");
+  });
+}
 
 var spoliers = document.querySelectorAll(".spoiler");
 
