@@ -1,16 +1,30 @@
 <div align="center">
   <h1>MyVideoGameList Advanced</h1>
   <p>Some code to improve default look and posibilities of <a href='https://myvideogamelist.com/'>myvideogamelist.com</a></p>
-  <img src='presentation.gif' alt=''>
 </div>
 
-## Features included:
+### Main features:
 
 - Dark theme
-- Sort your games by hours/rating
+- Sort your games by rating/hours
+- Sort your wishlist by priority
 - Hide/show games by category
 - New icons
 - Fixed issues of original website
+
+## Sort your games by rating/hours
+
+![Sort your games by rating/hours](images/sort-by-rating-hours.gif "Sort your games by rating/hours")
+
+:heavy_exclamation_mark: You need to score your games rating and played hours manually. Otherwise script just don't know what data to collect and what to sort. 
+
+To do that, go on game page and select rating and time from these fields and than save it. Games without this data will not be sorted.
+
+![Fields required for rating/hours sort](images/fields-required-for-rating-hours-sort.png "Fields required for rating/hours sort")
+
+Also I made color sorting, which you can notice near title.
+
+<div style='display:inline-block; width: 16px; height: 16px; background: #000;'></div> 10-9
 
 ## How to use it?
 
@@ -22,4 +36,5 @@ P.S.: you may try run it on another browser, for example Firefox has similar plu
 
 ## Known issues:
 
-* When user haven't scored game rating and played hours, script don't work at all
+~~* When user haven't scored game rating and played hours, script don't work at all~~
+
