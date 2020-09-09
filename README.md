@@ -44,6 +44,22 @@ And I used color system here too:
 
 At least, this is how I see this priority system. :wink: It is not perfect, but it's best I can do for now based on website posibilities. 
 
+## Hide/show games by category
+
+You can hide game categories in spoiler if list is too long. Just click on category name.
+
+![Hide/show games by category](images/hide-show-categories.gif "Hide/show games by category")
+
+## New icons
+
+I've noticed that some icons are missing on original website. One of them is ownership indicator. Now it will look like this:
+
+![Game ownership](images/icons-for-ownership-status.png "Game ownership")
+
+For this icons to appear you need to set and save this field in game page:
+
+![Field required for ownership](images/field-required-for-ownership.png "Field required for ownership")
+
 ## How to use it?
 
 1) Install [User JavaScript and CSS](https://chrome.google.com/webstore/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld) (available for Chrome only)
