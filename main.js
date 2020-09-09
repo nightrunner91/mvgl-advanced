@@ -24,9 +24,12 @@ function getNextSibling(elem, selector) {
 
 function getTableElements(elem, title) {
   var targetHeader = searchTargetHeading("h4", title)[0];
-  var targetTable = getNextSibling(targetHeader, ".table");
-  var targetTb = targetTable.getElementsByTagName("tbody")[0];
-  var targetTr = targetTable.getElementsByTagName("tr");
+
+  if (targetHeader != undefined) {
+    var targetTable = getNextSibling(targetHeader, ".table");
+    var targetTb = targetTable.getElementsByTagName("tbody")[0];
+    var targetTr = targetTable.getElementsByTagName("tr");
+  }
 
   if (elem == "header") {
     return targetHeader;
@@ -43,126 +46,134 @@ function getTableElements(elem, title) {
 }
 
 function prepareRows() {
-  for (let index = 0; index < completedRows.length; index++) {
-    var rowRating = completedRows[index].children[2].textContent;
-    completedRows[index].classList.add("rated--" + rowRating);
+  if (completedRows != undefined) {
+    for (let index = 0; index < completedRows.length; index++) {
+      var rowRating = completedRows[index].children[2].textContent;
+      completedRows[index].classList.add("rated--" + rowRating);
 
-    var rowHours = completedRows[index].children[3].textContent;
+      var rowHours = completedRows[index].children[3].textContent;
 
-    switch (rowHours) {
-      case " 1-2 Hours": {
-        completedRows[index].classList.add("hours--12");
-        break;
-      }
+      switch (rowHours) {
+        case " 1-2 Hours": {
+          completedRows[index].classList.add("hours--12");
+          break;
+        }
 
-      case " 2-3 Hours": {
-        completedRows[index].classList.add("hours--11");
-        break;
-      }
+        case " 2-3 Hours": {
+          completedRows[index].classList.add("hours--11");
+          break;
+        }
 
-      case " 3-4 Hours": {
-        completedRows[index].classList.add("hours--10");
-        break;
-      }
+        case " 3-4 Hours": {
+          completedRows[index].classList.add("hours--10");
+          break;
+        }
 
-      case " 4-5 Hours": {
-        completedRows[index].classList.add("hours--9");
-        break;
-      }
+        case " 4-5 Hours": {
+          completedRows[index].classList.add("hours--9");
+          break;
+        }
 
-      case " 5-10 Hours": {
-        completedRows[index].classList.add("hours--8");
-        break;
-      }
+        case " 5-10 Hours": {
+          completedRows[index].classList.add("hours--8");
+          break;
+        }
 
-      case " 10-20 Hours": {
-        completedRows[index].classList.add("hours--7");
-        break;
-      }
+        case " 10-20 Hours": {
+          completedRows[index].classList.add("hours--7");
+          break;
+        }
 
-      case " 20-30 Hours": {
-        completedRows[index].classList.add("hours--6");
-        break;
-      }
+        case " 20-30 Hours": {
+          completedRows[index].classList.add("hours--6");
+          break;
+        }
 
-      case " 30-40 Hours": {
-        completedRows[index].classList.add("hours--5");
-        break;
-      }
+        case " 30-40 Hours": {
+          completedRows[index].classList.add("hours--5");
+          break;
+        }
 
-      case " 40-50 Hours": {
-        completedRows[index].classList.add("hours--4");
-        break;
-      }
+        case " 40-50 Hours": {
+          completedRows[index].classList.add("hours--4");
+          break;
+        }
 
-      case " 50-75 Hours": {
-        completedRows[index].classList.add("hours--3");
-        break;
-      }
+        case " 50-75 Hours": {
+          completedRows[index].classList.add("hours--3");
+          break;
+        }
 
-      case " 75-100 Hours": {
-        completedRows[index].classList.add("hours--2");
-        break;
-      }
+        case " 75-100 Hours": {
+          completedRows[index].classList.add("hours--2");
+          break;
+        }
 
-      case " 100+ Hours": {
-        completedRows[index].classList.add("hours--1");
-        break;
+        case " 100+ Hours": {
+          completedRows[index].classList.add("hours--1");
+          break;
+        }
       }
     }
   }
 
-  for (let index = 0; index < planRows.length; index++) {
-    var rowPriority = planRows[index].children[4].textContent;
+  if (planRows != undefined) {
+    for (let index = 0; index < planRows.length; index++) {
+      var rowPriority = planRows[index].children[4].textContent;
 
-    switch (rowPriority) {
-      case "Low": {
-        planRows[index].classList.add("rated--1");
-        break;
-      }
+      switch (rowPriority) {
+        case "Low": {
+          planRows[index].classList.add("rated--1");
+          break;
+        }
 
-      case "Medium": {
-        planRows[index].classList.add("rated--2");
-        break;
-      }
+        case "Medium": {
+          planRows[index].classList.add("rated--2");
+          break;
+        }
 
-      case "High": {
-        planRows[index].classList.add("rated--3");
-        break;
-      }
+        case "High": {
+          planRows[index].classList.add("rated--3");
+          break;
+        }
 
-      default: {
-        planRows[index].classList.add("rated--4");
+        default: {
+          planRows[index].classList.add("rated--4");
+        }
       }
     }
   }
 }
 
 function placeCarrets() {
-  var sortByRating = document.createElement("i");
-  sortByRating.classList.add("caret", "rating");
+  if (completedRows != undefined) {
+    var sortByRating = document.createElement("i");
+    sortByRating.classList.add("caret", "rating");
+    
+    completedRows[0].children[2].appendChild(sortByRating);
 
-  var sortByPriority = document.createElement("i");
-  sortByPriority.classList.add("caret", "priority");
+    let rows = [];
 
-  completedRows[0].children[2].appendChild(sortByRating);
-  planRows[0].children[4].appendChild(sortByPriority);
+    for (let index = 1; index < completedRows.length; index++) {
+      rows.push(completedRows[index].children.length);
+    }
 
-  let rows = [];
+    if (rows.some(elem => elem > 5)) {
+      var headerHours = document.createElement('th');
+      headerHours.innerHTML = 'Time Played';
+      var sortByHours = document.createElement("i");
+      sortByHours.classList.add("caret", "hours");
 
-  for (let index = 1; index < completedRows.length; index++) {
-    rows.push(completedRows[index].children.length);
+      insertAfter(headerHours, completedRows[0].children[2]);
+
+      completedRows[0].children[3].appendChild(sortByHours);
+    }
   }
 
-  if (rows.some(elem => elem > 5)) {
-    var headerHours = document.createElement('th');
-    headerHours.innerHTML = 'Time Played';
-    var sortByHours = document.createElement("i");
-    sortByHours.classList.add("caret", "hours");
-
-    insertAfter(headerHours, completedRows[0].children[2]);
-
-    completedRows[0].children[3].appendChild(sortByHours);
+  if (planRows != undefined) {
+    var sortByPriority = document.createElement("i");
+    sortByPriority.classList.add("caret", "priority");
+    planRows[0].children[4].appendChild(sortByPriority);
   }
 }
 
