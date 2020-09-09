@@ -16,7 +16,7 @@
 
 ![Sort your games by rating/hours](images/sort-by-rating-hours.gif "Sort your games by rating/hours")
 
-:heavy_exclamation_mark: You need to score your games rating and played hours manually. Otherwise script just don't know what data to collect and what to sort. 
+:heavy_exclamation_mark: Sorting works only in "Completed" category. You need to score your games rating and played hours manually. Otherwise script just don't know what data to collect and what to sort. 
 
 To do that, go on game page and select rating and time from these fields and than save it. Games without this data will not be sorted.
 
