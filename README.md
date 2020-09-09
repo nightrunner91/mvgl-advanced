@@ -22,9 +22,11 @@ To do that, go on game page and select rating and time from these fields and tha
 
 ![Fields required for rating/hours sort](images/fields-required-for-rating-hours-sort.png "Fields required for rating/hours sort")
 
-Also I made color sorting, which you can notice near title.
+Also I made color sorting, which you can notice near title. It is based on rating and is similar to Metacritic color system (green, yellow and red)
 
-<div style='display:inline-block; width: 16px; height: 16px; background: #000;'></div> 10-9
+* 10-9 - Excelent games (green)
+* 8-7 - Good games (yellow)
+* <6 - "Meh" (red)
 
 ## How to use it?
 
