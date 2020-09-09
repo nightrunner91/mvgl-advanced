@@ -28,6 +28,22 @@ Also I made color sorting, which you can notice near title. It is based on ratin
 * 8-7 - Good games (yellow)
 * <6 - "Meh" (red)
 
+## Sort your wishlist by priority
+
+![Sort your wishlist by priority](images/sort-py-priority.gif "Sort your wishlist by priority")
+
+Just like in case above, you need to set priority on game page in this field and than save it.
+
+![Fields required for priority sort](images/field-required-for-priority-sort.png "Fields required for priority sort")
+
+And I used color system here too:
+
+* High priority or "Want to play ASAP" (green)
+* Medium priority or "Will be good to play someday" (yellow)
+* Low priority "<i>Probably</i> will play" (red)
+
+At least, this is how I see this priority system. :simple_smile: It is not perfect, but it's best I can do for now based on website posibilities. 
+
 ## How to use it?
 
 1) Install [User JavaScript and CSS](https://chrome.google.com/webstore/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld) (available for Chrome only)
