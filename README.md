@@ -42,7 +42,7 @@ And I used color system here too:
 * Medium priority or "Will be good to play someday" (yellow)
 * Low priority "<i>Probably</i> will play" (red)
 
-At least, this is how I see this priority system. :simple_smile: It is not perfect, but it's best I can do for now based on website posibilities. 
+At least, this is how I see this priority system. :wink: It is not perfect, but it's best I can do for now based on website posibilities. 
 
 ## How to use it?
 
