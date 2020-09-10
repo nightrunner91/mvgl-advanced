@@ -48,7 +48,7 @@ At least, this is how I see this priority system. :wink: It is not perfect, but 
 
 You can hide game categories in spoiler if list is too long. Just click on category name.
 
-![Hide/show games by category](https://i.imgur.com/abylRuN.gifv "Hide/show games by category")
+![Hide/show games by category](https://i.imgur.com/abylRuN.gif "Hide/show games by category")
 
 ## New icons
 
