@@ -20,7 +20,7 @@
 
 To do that, go on game page and select rating and time from these fields and than save it. Games without this data will not be sorted.
 
-![Fields required for rating/hours sort](images/fields-required-for-rating-hours-sort.png "Fields required for rating/hours sort")
+![Fields required for rating/hours sort](https://i.imgur.com/HK73rx5.png "Fields required for rating/hours sort")
 
 Also I made color sorting, which you can notice near title. It is based on rating and is similar to Metacritic color system (green, yellow and red)
 
@@ -30,11 +30,11 @@ Also I made color sorting, which you can notice near title. It is based on ratin
 
 ## Sort your wishlist by priority
 
-![Sort your wishlist by priority](images/sort-py-priority.gif "Sort your wishlist by priority")
+![Sort your wishlist by priority](https://i.imgur.com/EJRu9A6.gif "Sort your wishlist by priority")
 
 Just like in case above, you need to set priority on game page in this field and than save it.
 
-![Fields required for priority sort](images/field-required-for-priority-sort.png "Fields required for priority sort")
+![Fields required for priority sort](https://i.imgur.com/p4thNwE.png "Fields required for priority sort")
 
 And I used color system here too:
 
@@ -48,17 +48,17 @@ At least, this is how I see this priority system. :wink: It is not perfect, but 
 
 You can hide game categories in spoiler if list is too long. Just click on category name.
 
-![Hide/show games by category](images/hide-show-categories.gif "Hide/show games by category")
+![Hide/show games by category](https://i.imgur.com/abylRuN.gifv "Hide/show games by category")
 
 ## New icons
 
 I've noticed that some icons are missing on original website. One of them is ownership indicator. Now it will look like this:
 
-![Game ownership](images/icons-for-ownership-status.png "Game ownership")
+![Game ownership](https://i.imgur.com/V5qAICL.png "Game ownership")
 
 For this icons to appear you need to set and save this field in game page:
 
-![Field required for ownership](images/field-required-for-ownership.png "Field required for ownership")
+![Field required for ownership](https://i.imgur.com/p4thNwE.png "Field required for ownership")
 
 ## How to use it?
 
