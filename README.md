@@ -1,3 +1,9 @@
+# **DEPRECATED** - no longer actively maintained
+
+⚠ Since <a href='https://myvideogamelist.com/'>myvideogamelist.com</a> made an update on May 2022 this repositry is no longer a valid option to improve original website.
+
+---
+
 <div align="center">
   <h1>MyVideoGameList Advanced</h1>
   <p>Some code to improve default look and posibilities of <a href='https://myvideogamelist.com/'>myvideogamelist.com</a></p>
